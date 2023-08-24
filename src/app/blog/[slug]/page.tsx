@@ -1,18 +1,42 @@
-import { useRouter } from "next/router";
 import { headers } from "next/headers";
 import React from "react";
 import { getRssContent } from "../utils";
 import { parser } from "@/singleton/rss-parser-instance";
 import slugify from "slugify";
-import ReactMarkdown from "react-markdown";
+import { Metadata } from "next";
 
 const markdownRegex =
   /^#{1,6}\s|[*-]\s|!\[.*?\]\(.*?\)|\[.*?\]\(.*?\)|`[^`]*?`|<.*?>/;
-const htmlRegex = /^<.*?>|<\/.*?>|<.*?\/>/;
 
 interface SingleBlogProps {
   params: { slug: string };
-  searchParams: {};
+  searchParams: Record<string, string>;
+}
+
+export async function generateMetadata(
+  props: SingleBlogProps
+): Promise<Metadata> {
+  const headerList = headers();
+  const host = headerList.get("host")!;
+  const content = await getRssContent(host);
+  const feed = await parser.parseURL(content.rssFeed);
+
+  const blog = feed.items.find(
+    (item) =>
+      slugify(item.title!.toLowerCase(), {
+        remove: /:/,
+      }) === props.params.slug
+  );
+
+  if (!blog) {
+    return {
+      title: "Blog - Not found",
+    };
+  }
+
+  return {
+    title: blog.title,
+  };
 }
 
 const SingleBlog = async (props: SingleBlogProps) => {
@@ -37,7 +61,7 @@ const SingleBlog = async (props: SingleBlogProps) => {
   }
 
   return (
-    <div className="m-10 blog-content">
+    <div className="blog-content">
       <div className="my-10">
         <h1 className="text-3xl">{blog.title}</h1>
         <div>{new Date(blog.pubDate!).toDateString()}</div>
@@ -49,13 +73,10 @@ const SingleBlog = async (props: SingleBlogProps) => {
       </div>
 
       {(blog.description ?? blog["content:encoded"])?.match(markdownRegex) && (
-        <ReactMarkdown>
-          {blog.description ?? blog["content:encoded"]}
-        </ReactMarkdown>
-      )}
-
-      {(blog.description ?? blog["content:encoded"])?.match(htmlRegex) && (
-        <>This one is html</>
+        <div
+          className="mb-[100px]"
+          dangerouslySetInnerHTML={{ __html: blog["content:encoded"] }}
+        />
       )}
     </div>
   );

@@ -1,8 +1,11 @@
+// expects host to be passed in `host:port` format
 export const getBaseUrlByHost = (host: string): URL => {
   const localIpRegex =
     /^(?:0\.0\.0\.0|127\.0\.0\.1|localhost|::1|(?:10|172\.(?:1[6-9]|2[0-9]|3[01])|192\.168)\.\d{1,3}\.\d{1,3})$/;
   const matchesWithLocalIp = !!host?.split(":")?.shift()?.match(localIpRegex);
+
   const protocol = matchesWithLocalIp ? "http" : "https";
+
   return new URL(`${protocol}://${host}`);
 };
 

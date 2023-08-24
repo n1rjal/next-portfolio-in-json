@@ -54,7 +54,7 @@ export interface WorkExperience {}
 export const getJsonData = async (host: string): Promise<ProfileData> => {
   const baseUrl = getBaseUrlByHost(host);
   const res = await fetch(
-    `${baseUrl.toString()}/entries/${baseUrl.hostname}.json`
+    `${baseUrl.toString()}entries/${baseUrl.hostname}.json`
   );
   const data = await res.json();
   return data;

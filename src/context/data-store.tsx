@@ -1,6 +1,5 @@
 import { ProfileData, getJsonData } from "@/utils/getJsonData";
-import React from "react";
-import { StateCreator, create } from "zustand";
+import { create } from "zustand";
 
 export interface ProfileStoreInterface {
   host: string | null;
