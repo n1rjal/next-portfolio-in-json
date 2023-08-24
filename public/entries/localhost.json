@@ -1,0 +1,42 @@
+{
+  "rssFeed": "https://csaju.com/rss.xml",
+  "info": {
+    "name": "Nirjal Paudel",
+    "title": "Software Developer",
+    "headline": "Software developer | Open Source lover",
+    "description": "Software Developer",
+    "location": "Kathmandu, Nepal"
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/nirjalpaudel",
+    "facebook": "https://www.facebook.com/n1rjal",
+    "instagram": "https://instagram.com/n1rjal",
+    "github": "https://github.com/n1rjal"
+  },
+  "contacts": {
+    "email": "nirjalpaudel54312@gmail.com",
+    "whatsapp": "+9779863948081",
+    "phone": "+9779863948081"
+  },
+  "skills": {
+    "hard": [
+      "Nestjs",
+      "Mongodb",
+      "Python",
+      "django",
+      "nodejs",
+      "Github",
+      "SQL"
+    ],
+    "soft": ["Communication", "Teamwork", "Problem solving"],
+    "devops": ["Github Actions", "CI/CD"]
+  },
+  "projects": [
+    {
+      "name": "Postman to typescript",
+      "description": "A simple nodejs script that looks into the postman collection json and produces typescript interfaces",
+      "url": "https://github.com/n1rjal/postman-to-typescript"
+    }
+  ],
+  "workExperiences": [{}]
+}
