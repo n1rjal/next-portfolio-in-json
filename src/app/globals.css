@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Open+Sans&display=swap");
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  background-color: aliceblue;
+  color: rgb(80, 80, 80);
+  font-size: 18px;
+}
 
 * {
   margin: 0;
@@ -12,10 +20,6 @@
 
 .blog-tags {
   @apply bg-orange-300 first:ml-0 mx-1 p-1 rounded-md text-sm cursor-pointer;
-}
-
-body {
-  font-family: "Inter", sans-serif;
 }
 
 pre {
@@ -32,4 +36,32 @@ pre code {
 
 .blog-text {
   line-height: 1cm;
+}
+
+.container {
+  @apply max-h-[80vh] h-[80vh] pt-[1cm];
+}
+
+.name {
+  @apply text-6xl;
+  font-weight: bold;
+
+  background-image: linear-gradient(120deg, #1d98a9 0%, #13cdb7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+h1 {
+  @apply text-5xl font-bold text-black;
+}
+
+.button {
+  @apply text-white text-sm px-[24px] py-[12px] border-2 border-transparent mx-[5px] first:ml-0 last:mr-0;
+  @apply odd:bg-blue-500;
+  @apply even:border-black even:text-black;
+  @apply even:hover:bg-blue-500 even:hover:border-transparent even:hover:text-white;
+  @apply transition ease-in-out duration-[1s];
+  @apply hover:border-2 hover:border-blue-600 hover:border-black hover:bg-transparent transition hover:text-black;
 }
