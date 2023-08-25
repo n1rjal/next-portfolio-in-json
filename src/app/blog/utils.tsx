@@ -9,7 +9,9 @@ export const getBaseUrlByHost = (host: string): URL => {
   return new URL(`${protocol}://${host}`);
 };
 
-export async function getRssContent(host: string): Promise<string | null> {
+export async function getRssContent(
+  host: string
+): Promise<{ rssFeed: string } | null> {
   try {
     const baseUrl = getBaseUrlByHost(host);
     const res = await fetch(

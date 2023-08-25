@@ -19,6 +19,13 @@ export async function generateMetadata(
   const headerList = headers();
   const host = headerList.get("host")!;
   const content = await getRssContent(host);
+
+  if (!content) {
+    return {
+      title: "Blog - Not found",
+    };
+  }
+
   const feed = await parser.parseURL(content.rssFeed);
 
   const blog = feed.items.find(
@@ -43,6 +50,11 @@ const SingleBlog = async (props: SingleBlogProps) => {
   const headerList = headers();
   const host = headerList.get("host")!;
   const content = await getRssContent(host);
+
+  if (!content) {
+    return <></>;
+  }
+
   const feed = await parser.parseURL(content.rssFeed);
 
   const blog = feed.items.find(
