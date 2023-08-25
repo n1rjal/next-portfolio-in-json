@@ -65,11 +65,16 @@ export interface Socials {
 
 export interface WorkExperience {}
 
-export const getJsonData = async (host: string): Promise<ProfileData> => {
+export const getJsonData = async (
+  host: string
+): Promise<ProfileData | null> => {
   const baseUrl = getBaseUrlByHost(host);
   const res = await fetch(
     `${baseUrl.toString()}entries/${baseUrl.hostname}.json`
   );
+  if (res.status !== 200) {
+    return null;
+  }
   const data = await res.json();
   return data;
 };

@@ -9,12 +9,15 @@ export const getBaseUrlByHost = (host: string): URL => {
   return new URL(`${protocol}://${host}`);
 };
 
-export async function getRssContent(host: string) {
+export async function getRssContent(host: string): Promise<string | null> {
   try {
     const baseUrl = getBaseUrlByHost(host);
     const res = await fetch(
       `${baseUrl.toString()}/entries/${baseUrl.hostname}.json`
     );
+    if (res.status !== 200) {
+      return null;
+    }
     const data = await res.json();
     return data;
   } catch (e) {

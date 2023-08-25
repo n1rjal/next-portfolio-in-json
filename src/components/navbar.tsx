@@ -20,6 +20,8 @@ const NavBar = () => {
     if (!data) setData(window.location.host);
   }, []);
 
+  if (!data) return <></>;
+
   return (
     <div className="absolute top-0 left-0 max-w-screen w-screen bg-white grid grid-cols-2 py-[10px] gap-x-5 justify-between align-middle">
       <div className="flex grid-rows-1 justify-center gap-x-[20px] py-[5px]">

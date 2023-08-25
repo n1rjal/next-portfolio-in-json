@@ -13,6 +13,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = headerList.get("host")!;
   const data = await getJsonData(host);
 
+  if (!data) {
+    return {
+      title: `404! Not found`,
+      description: "Nothing is found in this route",
+    };
+  }
+
   return {
     title: `${data.info.name} | ${data.info.title}`,
     description: data?.info?.description.join(" "),

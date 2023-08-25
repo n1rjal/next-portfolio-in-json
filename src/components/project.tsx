@@ -18,7 +18,7 @@ const Project = () => {
     if (!data) setData(window.location.host);
   }, []);
 
-  if (!data) return "LOADING....";
+  if (!data) return <></>;
 
   if (!data.projects) return <></>;
 

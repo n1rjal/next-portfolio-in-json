@@ -18,6 +18,8 @@ const Hero = () => {
     if (!data) setData(window.location.host);
   }, []);
 
+  if (!data) return <></>
+
   if (!data?.info) return "LOADING....";
 
   return (
