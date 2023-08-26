@@ -21,7 +21,7 @@ const Contact = () => {
 
   return (
     <div>
-      <div className="flex grid-rows-1 justify-center gap-x-[20px] py-[5px]">
+      <div className="flex flex-wrap gap-x-[20px] py-[5px]">
         {data &&
           data.socials &&
           Object.entries(data.contacts).map(([key, value]) => (

@@ -102,7 +102,7 @@ pre code {
 }
 
 .container {
-  @apply max-h-[80vh] h-[80vh] xl:pt-[1cm] lg:pt-[1cm] sm:pt-0;
+  @apply md:max-h-[800px] md:h-[700px] sm:max-h-[500px] sm:h-[500px] xl:pt-[1cm] lg:pt-[1cm] sm:pt-0;
 }
 
 .name {
@@ -120,7 +120,7 @@ h1 {
 }
 
 .sectioned {
-  @apply mx-auto sm:px-[1cm] xl:max-w-[50vw] lg:max-w-[70vw] md:max-w-[90vw] sm:max-w-[100vw] py-10 px-10 py-[20px];
+  @apply mx-auto sm:px-[1cm] xl:max-w-[50vw] lg:max-w-[70vw] md:max-w-[90vw] sm:max-w-[100vw] py-[2cm] sm:px-[10px] px-[5px] py-[20px];
   @apply lg:first:mt-[20px] xl:first:mt-[20px] lg:last:mb-[20px] xl:last:mb-[20px];
   @apply bg-white;
 }

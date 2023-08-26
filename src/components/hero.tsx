@@ -22,7 +22,7 @@ const Hero = () => {
         className="
           grid lg:grid-cols-2 gap-x-[1cm] justify-between items-center
           sm:grid-cols-1 sm:max-w-[100%] sm:w-[100%] sm:justify-center sm:items-center
-          h-[100%] h-max-[80vh]
+          lg:h-[800px] lg:h-[800px] 
         "
       >
         <div className="lg:max-w-[500px] order-2 md:order-2 md:max-w-[100%]">

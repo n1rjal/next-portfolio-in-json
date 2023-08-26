@@ -16,9 +16,9 @@ const Project = () => {
 
   return (
     <div className="sectioned">
-      <div className="">
+      <div className="xl:bg-white xl:p-5 lg:p-5 lg:bg-white xl:rounded-lg lg:rounded-lg">
         <h1
-          className="mb-[10px] font-bold md:text-3xl sm:text-3xl lg:text-4xl"
+          className="mb-[10px] font-bold text-3xl md:text-3xl sm:text-3xl lg:text-4xl mb-6"
           id="projects"
         >
           Projects
@@ -37,11 +37,11 @@ const Project = () => {
                 {project.name}
               </h2>
               <div className="text-md">{project.description}</div>
-              <div className="my-[20px] max-w-[100%]">
+              <div className="my-[10px] max-w-[100%] flex flex-wrap w-[100%]">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-sm px-[15px] py-[7px] bg-gray-300 first:ml-0 last:mr-0 mx-[5px]"
+                    className="text-sm px-[15px] first-line:ml-0 py-[7px] mt-[10px] bg-gray-300 first:ml-0 last:mr-0 mx-[5px]"
                   >
                     {`${tag.substring(0, 1).toUpperCase()}${tag
                       .substring(1)

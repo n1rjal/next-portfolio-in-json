@@ -1,0 +1,148 @@
+{
+  "rssFeed": "https://medium.com/@nirjalpaudel54312/feed",
+  "info": {
+    "name": "Nirjal Paudel",
+    "title": "Software Engineer 👨‍💻",
+    "headline": "I am,",
+    "description": [
+      "With 3 years of experience, I love and live to break and make systems and play with it. I love to contribute to open source and share my knowledge.",
+      "I am a team player and I love to work in a team. I am a fast learner and I love to learn new things."
+    ],
+    "location": "Kathmandu, Nepal",
+    "photo": "https://media.licdn.com/dms/image/C5603AQEKC_D7TeT0Hg/profile-displayphoto-shrink_800_800/0/1644046428087?e=1698278400&v=beta&t=O3ZcDHBDqifyWNobOkkDZD4O7lZ2T-K3C8oufSU6Ff8"
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/nirjalpaudel",
+    "facebook": "https://www.facebook.com/n1rjal",
+    "instagram": "https://instagram.com/n1rjal",
+    "github": "https://github.com/n1rjal",
+    "medium": "https://medium.com/@nirjalpaudel54312"
+  },
+  "contacts": {
+    "Email": {
+      "show": "nirjalpaudel54312@gmail.com",
+      "link": "mailto:nirjalpaudel54312@gmail.com"
+    },
+    "WhatsApp": {
+      "show": "+9779863948081",
+      "link": "https://wa.me/+9779863948081"
+    },
+    "Phone": {
+      "show": "+9779863948081",
+      "link": "tel:+9779863948081"
+    }
+  },
+  "skills": {
+    "programming language": ["Javascript", "Python", "Rust", "SQL", "HTML"],
+    "familiarity": [
+      "Rust",
+      "Rest",
+      "Django",
+      "Nestjs",
+      "TypeScript",
+      "Graphql",
+      "MVC",
+      "clean code"
+    ],
+    "tools": ["Docker", "Git", "Eslint", "Husky", "Docker Compose"],
+    "database": ["Mongodb", "Redis", "PostgreSql"],
+    "web server": ["Nginx", "Traefik", "PM2"],
+    "soft": ["Communication", "Teamwork", "Problem solving"],
+    "devops": ["Github Actions", "CI/CD"]
+  },
+  "projects": {
+    "intro": "Here are all my projects that I have done in my journey that describes my experience as a developer",
+    "data": [
+      {
+        "name": "Postman to typescript",
+        "description": "A simple nodejs script that looks into the postman collection json and produces typescript interfaces",
+        "githubUrl": "https://github.com/n1rjal/postman-to-typescript",
+        "liveUrl": "https://www.npmjs.com/package/@n1rjal/pm_ts",
+        "tags": ["nodejs", "typescript", "recursion", "npm"]
+      },
+      {
+        "name": "Spyder",
+        "description": "A simple python script that scraps the internet and tries to create a simple web scraper",
+        "githubUrl": "https://github.com/n1rjal/SearchEngine",
+        "liveUrl": null,
+        "tags": ["python", "flask", "beautiful soup", "web scrapping"]
+      }
+    ]
+  },
+  "workExperiences": [
+    {
+      "companyName": "Hyteno",
+      "startDate": "2022-11-01",
+      "endDate": "2023-08-31",
+      "title": "Senior Software Engineer",
+      "city": "Paris, France",
+      "description": [
+        "Moved the architecture to microservices",
+        "Educated the team on pros, cons and adapting towards microservices",
+        "Communication of microservices with using rabbitmq"
+      ]
+    },
+    {
+      "companyName": "Cleanilo",
+      "startDate": "2022-05-01",
+      "endDate": "2022-09-30",
+      "title": "Senior Software Engineer",
+      "city": "Hamburg, Germany",
+      "description": [
+        "Built the integration of payments across the pipeline",
+        "Spearheaded the project development"
+      ]
+    },
+    {
+      "companyName": "Hyteno",
+      "startDate": "2021-11-01",
+      "endDate": "2022-11-30",
+      "title": "Backend Developer",
+      "city": "Paris, France",
+      "description": [
+        "Manage AWS services",
+        "Guide the company on AWS proper usage",
+        "Acting software architect",
+        "Backend development"
+      ]
+    },
+    {
+      "companyName": "Lanceme Up",
+      "startDate": "2021-06-01",
+      "endDate": "2021-11-30",
+      "title": "Software Engineer",
+      "city": "Kathmandu, Nepal",
+      "description": [
+        "My primary job at Lanceme Up was to help them architect their backend and system design.",
+        "led their migration into AWS",
+        "helped them reduce the cost of their infrastructure",
+        "Mentored junior developers on building new features"
+      ]
+    },
+    {
+      "companyName": "Softshala Nepal",
+      "startDate": "2020-04-01",
+      "endDate": "2021-04-30",
+      "title": "Back End Developer",
+      "city": "Kathmandu, Nepal",
+      "description": [
+        "In Softshala, my responsibilities were to build their video streaming service from scratch and make their share marketing app as fast as possible.",
+        "Conceptualized the best way to build their new solution"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Provathan Hackathan",
+      "date": "2021-09-01",
+      "issuedBy": "CSIT Association of Nepal",
+      "attachment": null
+    },
+    {
+      "title": "MLH Hackathan",
+      "date": "2021-03-01",
+      "issuedBy": "Major League hacking",
+      "attachment": null
+    }
+  ]
+}
