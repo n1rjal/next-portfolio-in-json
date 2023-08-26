@@ -65,7 +65,7 @@
         "description": "A simple python script that scraps the internet and tries to create a simple web scraper",
         "githubUrl": "https://github.com/n1rjal/SearchEngine",
         "liveUrl": null,
-        "tags": ["python", "flask", "beautiful soup", "web scrapping"]
+        "tags": ["python", "flask", "bs4"]
       }
     ]
   },
