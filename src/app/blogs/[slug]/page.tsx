@@ -73,20 +73,24 @@ const SingleBlog = async (props: SingleBlogProps) => {
   }
 
   return (
-    <div className="bg-white lg:px-[400px] xl:px-[200px] md:px-[100px] sm:px-[50px] py-10">
-      <div className="my-10">
-        <h1 className="xl:text-5xl lg:text-5xl md:text-3xl sm:text-3xl text-2xl w-[100%]">
-          {blog.title}
-        </h1>
-        <div className="mt-2">{new Date(blog.pubDate!).toDateString()}</div>
-      </div>
+    <div className="w-[100%] bg-white">
+      <div className="m-auto lg:max-w-[60vw] xl:max-w-[50vw] md:max-w-[80vw] py-10">
+        <div className="my-10">
+          <h1 className="xl:text-5xl lg:text-5xl md:text-3xl sm:text-3xl text-2xl w-[100%]">
+            {blog.title}
+          </h1>
+          <div className="mt-2">{new Date(blog.pubDate!).toDateString()}</div>
+        </div>
 
-      {(blog.description ?? blog["content:encoded"])?.match(markdownRegex) && (
-        <div
-          className="mb-[100px] blog-content font-serif text-xl"
-          dangerouslySetInnerHTML={{ __html: blog["content:encoded"] }}
-        />
-      )}
+        {(blog.description ?? blog["content:encoded"])?.match(
+          markdownRegex
+        ) && (
+          <div
+            className="mb-[100px] blog-content font-serif text-xl"
+            dangerouslySetInnerHTML={{ __html: blog["content:encoded"] }}
+          />
+        )}
+      </div>
     </div>
   );
 };
