@@ -35,9 +35,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NavBar />
-        <section className="mx-auto pt-[1cm] xl:max-w-[70vw] lg:max-w-[80vw] md:max-w-[90vw] sm:max-w-[100vw]  py-10 p-5">
-          {children}
-        </section>
+        {children}
       </body>
     </html>
   );

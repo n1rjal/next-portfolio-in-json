@@ -23,7 +23,9 @@ body {
 }
 
 pre {
-  @apply p-4 bg-gray-100 rounded-md;
+  @apply px-10 py-10 bg-gray-200 rounded-md my-3;
+  word-wrap: break-word;
+  overflow-x: auto;
 }
 
 pre code {
@@ -31,15 +33,76 @@ pre code {
 }
 
 .blog-content {
-  @apply w-[60vw] m-auto;
+  line-height: 35px;
+  font-size: 20px;
 }
 
-.blog-text {
-  line-height: 1cm;
+.blog-content a {
+  text-decoration: underline;
+}
+
+.blog-content figcaption {
+  @apply text-sm text-center;
+  margin: 10px 0;
+}
+
+.blog-content h1 {
+  @apply my-[40px];
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blog-content h2 {
+  @apply my-[40px];
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.blog-content h3 {
+  @apply my-[40px];
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.blog-content p {
+  margin-bottom: 1em;
+}
+
+.blog-content figure {
+  margin: 40px 0;
+  width: 100%;
+}
+
+.blog-content blockquote {
+  @apply my-[40px] italic;
+  border-left: 3px solid rgb(80, 80, 80);
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.blog-content h4 {
+  @apply my-[40px];
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+  margin-left: 3rem;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  margin-left: 3rem;
+}
+
+.blog-content ol li,
+.blog-content ul li {
+  @apply my-[15px];
 }
 
 .container {
-  @apply max-h-[80vh] h-[80vh] pt-[1cm];
+  @apply max-h-[80vh] h-[80vh] xl:pt-[1cm] lg:pt-[1cm] sm:pt-0;
 }
 
 .name {
@@ -50,11 +113,16 @@ pre code {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 h1 {
   @apply text-5xl font-bold text-black;
+}
+
+.sectioned {
+  @apply mx-auto sm:px-[1cm] xl:max-w-[50vw] lg:max-w-[70vw] md:max-w-[90vw] sm:max-w-[100vw] py-10 px-10 py-[20px];
+  @apply lg:first:mt-[20px] xl:first:mt-[20px] lg:last:mb-[20px] xl:last:mb-[20px];
+  @apply bg-white;
 }
 
 .button {

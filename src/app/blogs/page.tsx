@@ -30,24 +30,26 @@ const Blog = async () => {
   const host = headerList.get("host")!;
 
   const content = await getRssContent(host);
+
   if (!content) {
     return <></>;
   }
   const feed = await parser.parseURL(content.rssFeed);
 
   return (
-    <div className="m-10">
-      <h1 className="text-4xl my-5">Blog Page</h1>
+    <div className="m-10 sectioned bg-transparent">
       {feed?.items &&
         feed.items.map((item) => (
           <div key={item.guid} className="first:pt-5 last:pb-5 my-10">
             <Link
-              href={`/blog/${slugify(item.title!.toLowerCase(), {
+              href={`/blogs/${slugify(item.title!.toLowerCase(), {
                 remove: /:/,
               })}`}
             >
-              <div className="text-xl">{item.title}</div>
-              <div>{new Date(item.pubDate!).toDateString()}</div>
+              <h1 className="text-xl font-semibold">{item.title}</h1>
+              <div className="text-sm">
+                {new Date(item.pubDate!).toDateString()}
+              </div>
             </Link>
             <div>
               {item.categories?.map((category) => (
