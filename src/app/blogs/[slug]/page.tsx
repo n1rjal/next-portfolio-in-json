@@ -2,7 +2,6 @@ import { headers } from "next/headers";
 import React from "react";
 import { getRssContent } from "../utils";
 import { parser } from "@/singleton/rss-parser-instance";
-import slugify from "slugify";
 import { Metadata } from "next";
 import { customSlugify } from "../slugify";
 import { ImageResponse } from "next/server";
@@ -31,10 +30,7 @@ export async function generateMetadata(
   const feed = await parser.parseURL(content.rssFeed);
 
   const blog = feed.items.find(
-    (item) =>
-      slugify(item.title!.toLowerCase(), {
-        remove: /:/,
-      }) === props.params.slug
+    (item) => customSlugify(item.title!.toLowerCase()) === props.params.slug
   );
 
   if (!blog) {
