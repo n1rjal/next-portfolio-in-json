@@ -1,4 +1,3 @@
-import { useProfileStore } from "@/context/data-store";
 import { ImageResponse } from "next/server";
 import React from "react";
 // App router includes @vercel/og.
@@ -7,13 +6,6 @@ import React from "react";
 export const runtime = "edge";
 
 export async function GET() {
-  const { data } = useProfileStore(({ host, setHost, setData, data }) => ({
-    host,
-    data,
-    setHost,
-    setData,
-  }));
-
   return new ImageResponse(
     (
       <div
@@ -28,9 +20,7 @@ export async function GET() {
           justifyContent: "center",
           alignItems: "center",
         }}
-      >
-        {data?.bio}
-      </div>
+      ></div>
     ),
     {
       width: 1200,

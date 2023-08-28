@@ -26,7 +26,7 @@ const NavBar = () => {
       <div className="flex grid-rows-1 justify-space-between gap-x-[20px] py-[5px] px-[20px]">
         <Link href="/">Home</Link>
         <Link href="/#projects">Projects</Link>
-        <Link href="">Experience</Link>
+        <Link href="/#work">Experience</Link>
         <Link href="/blogs">Blogs</Link>
       </div>
     </div>

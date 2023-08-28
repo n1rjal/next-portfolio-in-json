@@ -1,6 +1,7 @@
+import { parse } from "node-html-parser";
+
 export async function getOGImage(url: string) {
   try {
-    console.log(url);
     const resp = await fetch(url);
     const html = await resp.text();
 
@@ -18,4 +19,18 @@ export async function getOGImage(url: string) {
     console.log(e);
     throw e;
   }
+}
+
+export function getImagesFromHtml(htmlContent: string): string[] {
+  const root = parse(htmlContent);
+  const imageUrls: string[] = [];
+  const images = root.querySelectorAll("img");
+  images.forEach((image) => {
+    const imageUrl = image.getAttribute("src");
+    if (imageUrl) {
+      imageUrls.push(imageUrl);
+    }
+  });
+
+  return imageUrls;
 }

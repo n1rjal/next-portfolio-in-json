@@ -1,10 +1,12 @@
-import { headers } from "next/headers";
-import React from "react";
-import { getRssContent } from "../utils";
 import { parser } from "@/singleton/rss-parser-instance";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 import { customSlugify } from "../slugify";
-import { ImageResponse } from "next/server";
+import { getRssContent } from "../utils";
+import React from "react";
+import { getImagesFromHtml } from "@/utils/getOgImage";
+import Link from "next/link";
+import { Item } from "rss-parser";
 
 const markdownRegex =
   /^#{1,6}\s|[*-]\s|!\[.*?\]\(.*?\)|\[.*?\]\(.*?\)|`[^`]*?`|<.*?>/;
@@ -39,30 +41,7 @@ export async function generateMetadata(
     };
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const ogImage = new ImageResponse(
-    (
-      <div
-        style={{
-          fontSize: 40,
-          color: "black",
-          background: "white",
-          width: "100%",
-          height: "100%",
-          padding: "50px 200px",
-          textAlign: "center",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {blog.title}
-      </div>
-    ),
-    {
-      width: 1200,
-      height: 630,
-    }
-  );
+  const images = getImagesFromHtml(blog["content:encoded"]);
 
   return {
     title: blog.title,
@@ -73,7 +52,7 @@ export async function generateMetadata(
       title: blog.title,
       url: `https://${host}/blogs/${customSlugify(blog.title!.toLowerCase())}`,
       ttl: 3600,
-      images: [],
+      images: images[0],
     },
 
     category: blog.categories?.join(", "),
@@ -114,6 +93,30 @@ const SingleBlog = async (props: SingleBlogProps) => {
     );
   }
 
+  const getRandomItemsFromArray = <
+    T extends { "content:encoded": string } & { description: string } & Item
+  >(
+    arr: T[],
+    count: number
+  ): T[] => {
+    let currentCount = 0;
+
+    const choicesDict: Record<string, T> = {};
+
+    while (currentCount < count) {
+      const choice = Math.floor(Math.random() * arr.length);
+      choicesDict[arr[choice].guid!] = arr[choice];
+      const exists = !!choicesDict[arr[choice].guid!];
+      if (!exists) currentCount++;
+    }
+
+    return Object.values(choicesDict);
+  };
+
+  const otherBlogs = feed.items.filter(
+    (item) => customSlugify(item.title!.toLowerCase()) !== props.params.slug
+  );
+
   return (
     <div className="w-[100%] bg-white">
       <div className="m-auto lg:max-w-[60vw] xl:max-w-[50vw] md:max-w-[80vw] py-10">
@@ -128,10 +131,91 @@ const SingleBlog = async (props: SingleBlogProps) => {
           markdownRegex
         ) && (
           <div
-            className="mb-[100px] blog-content font-serif text-xl"
+            className="mb-[10px] blog-content font-serif text-xl"
             dangerouslySetInnerHTML={{ __html: blog["content:encoded"] }}
           />
         )}
+        <div className="">
+          <div className="w-[100%]">
+            {blog.categories &&
+              blog.categories?.map((category) => (
+                <span key={category} className="blog-tags text-[20px]">
+                  {category}
+                </span>
+              ))}
+          </div>
+          <div className="my-3">
+            <h3 className="mt-[2cm] mb-[1cm] text-2xl font-bold">
+              Latest Blogs
+            </h3>
+            {otherBlogs
+              .slice(0, 3)
+              .filter(
+                (item) =>
+                  customSlugify(item.title!.toLowerCase()) !== props.params.slug
+              )
+              .map((blog) => (
+                <div className="mt-3" key={blog.guid}>
+                  <div key={blog.guid} className="first:mt-0 last:mb-5">
+                    <Link
+                      href={`/blogs/${customSlugify(
+                        blog.title!.toLowerCase()
+                      )}`}
+                    >
+                      <h2 className="text-xl font-semibold">{blog.title}</h2>
+                      <div className="text-sm">
+                        {new Date(blog.pubDate!).toDateString()}
+                      </div>
+                    </Link>
+                    <div>
+                      {blog.categories?.map((category) => (
+                        <span key={category} className="blog-tags">
+                          {category}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+          {otherBlogs && (
+            <div className="my-3">
+              <h3 className="mt-[2cm] mb-[1cm] text-2xl font-bold">
+                Some Random Blogs
+              </h3>
+              {getRandomItemsFromArray(otherBlogs, 3)
+                .slice(0, 3)
+                .filter(
+                  (item) =>
+                    customSlugify(item.title!.toLowerCase()) !==
+                    props.params.slug
+                )
+                .map((blog) => (
+                  <div className="mt-3" key={blog.guid}>
+                    <div key={blog.guid} className="first:mt-0 last:mb-5">
+                      <Link
+                        href={`/blogs/${customSlugify(
+                          blog.title!.toLowerCase()
+                        )}`}
+                      >
+                        <h2 className="text-xl font-semibold">{blog.title}</h2>
+                        <div className="text-sm">
+                          {new Date(blog.pubDate!).toDateString()}
+                        </div>
+                      </Link>
+                      <div>
+                        {blog.categories?.map((category) => (
+                          <span key={category} className="blog-tags">
+                            {category}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
