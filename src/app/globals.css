@@ -19,7 +19,7 @@ body {
 }
 
 .blog-tags {
-  @apply bg-orange-300 first:ml-0 mx-1 p-1 rounded-md text-sm cursor-pointer;
+  @apply first:ml-0 mx-1 p-1 text-sm cursor-pointer border-[2px] border border-slate-300 hover:border-slate-400;
 }
 
 pre {

@@ -4,6 +4,8 @@ import { getRssContent } from "../utils";
 import { parser } from "@/singleton/rss-parser-instance";
 import slugify from "slugify";
 import { Metadata } from "next";
+import { customSlugify } from "../slugify";
+import { ImageResponse } from "next/server";
 
 const markdownRegex =
   /^#{1,6}\s|[*-]\s|!\[.*?\]\(.*?\)|\[.*?\]\(.*?\)|`[^`]*?`|<.*?>/;
@@ -41,8 +43,53 @@ export async function generateMetadata(
     };
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const ogImage = new ImageResponse(
+    (
+      <div
+        style={{
+          fontSize: 40,
+          color: "black",
+          background: "white",
+          width: "100%",
+          height: "100%",
+          padding: "50px 200px",
+          textAlign: "center",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {blog.title} - {blog.title}
+      </div>
+    ),
+    {
+      width: 1200,
+      height: 630,
+    }
+  );
+
   return {
     title: blog.title,
+    openGraph: {
+      type: "website",
+      description: blog.title + " - " + blog.description,
+      title: blog.title,
+      url: `https://${host}/blogs/${customSlugify(blog.title!.toLowerCase())}`,
+      ttl: 3600,
+    },
+
+    category: blog.categories?.join(", "),
+    authors: [
+      {
+        name: blog.creator,
+        url: `https://${host}`,
+      },
+    ],
+    description: blog["content:encoded"].substring(1, 100),
+    applicationName: "Blogs",
+    creator: blog.creator,
+    keywords: blog.categories,
+    publisher: "Medium",
   };
 }
 
@@ -58,10 +105,7 @@ const SingleBlog = async (props: SingleBlogProps) => {
   const feed = await parser.parseURL(content.rssFeed);
 
   const blog = feed.items.find(
-    (item) =>
-      slugify(item.title!.toLowerCase(), {
-        remove: /:/,
-      }) === props.params.slug
+    (item) => customSlugify(item.title!.toLowerCase()) === props.params.slug
   );
 
   if (!blog) {

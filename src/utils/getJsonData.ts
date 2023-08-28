@@ -20,6 +20,7 @@ export interface ProfileData {
   skills: Record<string, string[]>;
   workExperiences: WorkExperience[];
   awards: Award[];
+  bio: string;
 }
 
 export interface ContactsInterface {

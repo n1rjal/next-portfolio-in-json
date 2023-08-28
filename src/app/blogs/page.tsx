@@ -3,9 +3,9 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import { getRssContent } from "./utils";
 import { parser } from "@/singleton/rss-parser-instance";
-import slugify from "slugify";
 import { Metadata } from "next";
 import { getJsonData } from "@/utils/getJsonData";
+import { customSlugify } from "./slugify";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headerList = headers();
@@ -38,28 +38,26 @@ const Blog = async () => {
 
   return (
     <div className="m-10 sectioned bg-transparent">
-      {feed?.items &&
-        feed.items.map((item) => (
-          <div key={item.guid} className="first:pt-5 last:pb-5 my-10">
-            <Link
-              href={`/blogs/${slugify(item.title!.toLowerCase(), {
-                remove: /:/,
-              })}`}
-            >
-              <h1 className="text-xl font-semibold">{item.title}</h1>
-              <div className="text-sm">
-                {new Date(item.pubDate!).toDateString()}
+      <div className="px-10 py-5">
+        {feed?.items &&
+          feed.items.map((item) => (
+            <div key={item.guid} className="first:pt-5 last:pb-5 my-10">
+              <Link href={`/blogs/${customSlugify(item.title!.toLowerCase())}`}>
+                <h2 className="text-xl font-semibold">{item.title}</h2>
+                <div className="text-sm">
+                  {new Date(item.pubDate!).toDateString()}
+                </div>
+              </Link>
+              <div>
+                {item.categories?.map((category) => (
+                  <span key={category} className="blog-tags">
+                    {category}
+                  </span>
+                ))}
               </div>
-            </Link>
-            <div>
-              {item.categories?.map((category) => (
-                <span key={category} className="blog-tags">
-                  {category}
-                </span>
-              ))}
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 };
