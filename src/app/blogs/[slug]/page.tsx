@@ -55,7 +55,7 @@ export async function generateMetadata(
           alignItems: "center",
         }}
       >
-        {blog.title} - {blog.title}
+        {blog.title}
       </div>
     ),
     {
@@ -68,7 +68,8 @@ export async function generateMetadata(
     title: blog.title,
     openGraph: {
       type: "website",
-      description: blog.title + " - " + blog.description,
+      description:
+        blog.title + " - " + blog["content:encoded"].substring(0, 100),
       title: blog.title,
       url: `https://${host}/blogs/${customSlugify(blog.title!.toLowerCase())}`,
       ttl: 3600,
