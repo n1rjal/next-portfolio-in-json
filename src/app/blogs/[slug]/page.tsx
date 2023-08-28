@@ -99,15 +99,13 @@ const SingleBlog = async (props: SingleBlogProps) => {
     arr: T[],
     count: number
   ): T[] => {
-    let currentCount = 0;
-
     const choicesDict: Record<string, T> = {};
 
-    while (currentCount < count) {
+    while (Object.entries(choicesDict).length < count) {
       const choice = Math.floor(Math.random() * arr.length);
-      choicesDict[arr[choice].guid!] = arr[choice];
       const exists = !!choicesDict[arr[choice].guid!];
-      if (!exists) currentCount++;
+      if (exists) continue;
+      choicesDict[arr[choice].guid!] = arr[choice];
     }
 
     return Object.values(choicesDict);
