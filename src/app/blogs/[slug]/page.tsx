@@ -73,6 +73,7 @@ export async function generateMetadata(
       title: blog.title,
       url: `https://${host}/blogs/${customSlugify(blog.title!.toLowerCase())}`,
       ttl: 3600,
+      images: [],
     },
 
     category: blog.categories?.join(", "),
