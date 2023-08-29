@@ -55,11 +55,18 @@
     "intro": "Here are all my projects that I have done in my journey that describes my experience as a developer",
     "data": [
       {
-        "name": "Postman to typescript",
-        "description": "A simple nodejs script that looks into the postman collection json and produces typescript interfaces",
-        "githubUrl": "https://github.com/n1rjal/postman-to-typescript",
-        "liveUrl": "https://www.npmjs.com/package/@n1rjal/pm_ts",
-        "tags": ["nodejs", "typescript", "recursion", "npm"]
+        "name": "Ecommerce",
+        "description": "A simple ecommerce web application built using django, python. Supports various features like carts, checkout, and email",
+        "githubUrl": "https://github.com/n1rjal/HamroBakas",
+        "liveUrl": null,
+        "tags": [
+          "python",
+          "django",
+          "javascript",
+          "bootstrap",
+          "html",
+          "mailing"
+        ]
       },
       {
         "name": "Spyder",
@@ -67,6 +74,13 @@
         "githubUrl": "https://github.com/n1rjal/SearchEngine",
         "liveUrl": null,
         "tags": ["python", "flask", "beautiful soup", "web scrapping"]
+      },
+      {
+        "name": "Postman to typescript",
+        "description": "A simple nodejs script that looks into the postman collection json and produces typescript interfaces",
+        "githubUrl": "https://github.com/n1rjal/postman-to-typescript",
+        "liveUrl": "https://www.npmjs.com/package/@n1rjal/pm_ts",
+        "tags": ["nodejs", "typescript", "recursion", "npm"]
       }
     ]
   },

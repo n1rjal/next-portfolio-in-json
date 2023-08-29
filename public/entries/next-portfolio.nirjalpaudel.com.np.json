@@ -10,7 +10,7 @@
       "I thrive as a team player and find joy in collaborative work. With a strong appetite for learning, I quickly absorb new concepts and enjoy expanding my skill set."
     ],
     "location": "Kathmandu, Nepal",
-    "photo": "https://media.licdn.com/dms/image/C5603AQEKC_D7TeT0Hg/profile-displayphoto-shrink_800_800/0/1644046428087?e=1698278400&v=beta&t=O3ZcDHBDqifyWNobOkkDZD4O7lZ2T-K3C8oufSU6Ff8"
+    "photo": "https://scontent.fktm20-1.fna.fbcdn.net/v/t39.30808-6/275065410_1605446223144319_795733477157849640_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=Lgvg9UYG7GwAX-Ktkjp&_nc_ht=scontent.fktm20-1.fna&oh=00_AfBfOc6WtxG8_uzkKIcg8gowF719k-C6WvpEehU0n-WBtQ&oe=64F287C3"
   },
   "socials": {
     "linkedin": "https://www.linkedin.com/in/nirjalpaudel",
@@ -18,6 +18,7 @@
     "instagram": "https://instagram.com/n1rjal",
     "github": "https://github.com/n1rjal"
   },
+  "portfolioUrl": "",
   "contacts": {
     "Email": {
       "show": "nirjalpaudel54312@gmail.com",
@@ -54,11 +55,18 @@
     "intro": "Here are all my projects that I have done in my journey that describes my experience as a developer",
     "data": [
       {
-        "name": "Postman to typescript",
-        "description": "A simple nodejs script that looks into the postman collection json and produces typescript interfaces",
-        "githubUrl": "https://github.com/n1rjal/postman-to-typescript",
-        "liveUrl": "https://www.npmjs.com/package/@n1rjal/pm_ts",
-        "tags": ["nodejs", "typescript", "recursion", "npm"]
+        "name": "Ecommerce",
+        "description": "A simple ecommerce web application built using django, python. Supports various features like carts, checkout, and email",
+        "githubUrl": "https://github.com/n1rjal/HamroBakas",
+        "liveUrl": null,
+        "tags": [
+          "python",
+          "django",
+          "javascript",
+          "bootstrap",
+          "html",
+          "mailing"
+        ]
       },
       {
         "name": "Spyder",
@@ -66,6 +74,13 @@
         "githubUrl": "https://github.com/n1rjal/SearchEngine",
         "liveUrl": null,
         "tags": ["python", "flask", "beautiful soup", "web scrapping"]
+      },
+      {
+        "name": "Postman to typescript",
+        "description": "A simple nodejs script that looks into the postman collection json and produces typescript interfaces",
+        "githubUrl": "https://github.com/n1rjal/postman-to-typescript",
+        "liveUrl": "https://www.npmjs.com/package/@n1rjal/pm_ts",
+        "tags": ["nodejs", "typescript", "recursion", "npm"]
       }
     ]
   },
