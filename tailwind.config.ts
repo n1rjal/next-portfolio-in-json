@@ -12,9 +12,7 @@ const config: Config = {
         primary: "#0141ff",
         secondary: "#00b8ff",
       },
-      fontFamily: {
-        sans: ["Roboto", "Arial", "sans-serif"],
-      },
+
       screens: {
         sm: "500px", // Small screens like smartphones
         md: "700px", // Medium screens like tablets

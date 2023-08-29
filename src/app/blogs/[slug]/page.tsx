@@ -133,7 +133,8 @@ const SingleBlog = async (props: SingleBlogProps) => {
             dangerouslySetInnerHTML={{ __html: blog["content:encoded"] }}
           />
         )}
-        <div className="">
+
+        <div>
           <div className="w-[100%]">
             {blog.categories &&
               blog.categories?.map((category) => (
@@ -141,6 +142,19 @@ const SingleBlog = async (props: SingleBlogProps) => {
                   {category}
                 </span>
               ))}
+          </div>
+          <div className="my-[2cm] border border-gray-950 p-[20px]">
+            <Link href={blog.link!} target="_blank">
+              <p className="text-sm">Support this article on medium,</p>
+              <h2 className="text-4xl font-bold">{blog.title}</h2>
+              <p className="text-sm">
+                {new Date(blog.pubDate!).toLocaleString("en-US", {
+                  month: "long",
+                  year: "numeric",
+                }) + ", "}
+                {blog.creator}
+              </p>
+            </Link>
           </div>
           <div className="my-3">
             <h3 className="mt-[2cm] mb-[1cm] text-2xl font-bold">

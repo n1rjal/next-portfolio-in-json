@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
 
 body {
-  font-family: "DM Sans", sans-serif;
-  font-family: "Open Sans", sans-serif;
   background-color: aliceblue;
   color: rgb(80, 80, 80);
-  font-size: 18px;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
 }
 
 * {
@@ -35,6 +34,7 @@ pre code {
 .blog-content {
   line-height: 35px;
   font-size: 20px;
+  font-family: "Raleway", sans-serif;
 }
 
 .blog-content a {
@@ -102,11 +102,11 @@ pre code {
 }
 
 .container {
-  @apply md:max-h-[800px] md:h-[700px] sm:max-h-[500px] sm:h-[500px] xl:pt-[1cm] lg:pt-[1cm] sm:pt-0;
+  @apply md:max-h-[800px] md:h-[700px] sm:max-h-[600px] sm:h-[600px] xl:pt-[1cm] lg:pt-[1cm] sm:px-[2cm];
 }
 
 .name {
-  @apply text-6xl;
+  @apply xl:text-6xl lg:text-6xl text-4xl;
   font-weight: bold;
 
   background-image: linear-gradient(120deg, #1d98a9 0%, #13cdb7 100%);
@@ -120,7 +120,7 @@ h1 {
 }
 
 .sectioned {
-  @apply mx-auto sm:px-[1cm] xl:max-w-[65vw] lg:max-w-[70vw] md:max-w-[90vw] sm:max-w-[100vw] py-[2cm] sm:px-[10px] px-[5px] py-[20px];
+  @apply mx-auto sm:px-[1cm] xl:max-w-[65vw] lg:max-w-[70vw] md:max-w-[90vw] sm:max-w-[100vw] py-[2cm] sm:px-[10px] px-[20px] py-[20px];
   @apply lg:first:mt-[20px] xl:first:mt-[20px] lg:last:mb-[20px] xl:last:mb-[20px];
   @apply bg-white;
 }

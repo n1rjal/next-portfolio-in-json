@@ -14,7 +14,7 @@ const Skills = () => {
   if (!data.projects) return <></>;
 
   return (
-    <div className="sectioned">
+    <div className="sectioned pb-10">
       <div>
         <div className="xl:bg-white xl:p-5 lg:p-5 lg:bg-white xl:rounded-lg lg:rounded-lg">
           <h1

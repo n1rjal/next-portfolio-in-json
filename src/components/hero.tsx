@@ -20,43 +20,46 @@ const Hero = () => {
     <div className="container sectioned">
       <div
         className="
-          grid lg:grid-cols-2 gap-x-[1cm] justify-between items-center
-          sm:grid-cols-1 sm:max-w-[100%] sm:w-[100%] sm:justify-center sm:items-center
-          lg:h-[800px] lg:h-[800px] 
+          grid lg:grid-cols-2 gap-x-[1cm] justify-between
+          sm:grid-cols-1 sm:max-w-[100%] sm:w-[100%] sm:justify-center sm:items-center sm:h-max-[100%]
+          lg:h-[800px] md:h-max-[800px] md:h-[700px] md:h-max-[700px]
+          
         "
       >
-        <div className="lg:max-w-[500px] order-2 md:order-2 md:max-w-[100%]">
-          <div className="mb-[20px]">
-            <div className="text-sm font-bold">{data?.info.headline}</div>
-            <div className="name">{data?.info.name}</div>
-            <div>
-              {data?.info.title}
-              {data?.info.location ? `, ${data?.info.location}` : ""}
-            </div>
-          </div>
-          <div className="my-[10px]">
-            {data?.info?.description?.map((text) => (
-              <div className="my-[10px] text-[16px]" key={text}>
-                {text}
+        <div className="lg:max-w-[500px] h-[100%] h-max-[100%] order-2 md:order-2 md:max-w-[100%] m-auto flex content-center items-center">
+          <div>
+            <div className="mb-[20px]">
+              <div className="text-sm font-bold">{data?.info.headline}</div>
+              <div className="name">{data?.info.name}</div>
+              <div className="text-sm xl:text-[16px]">
+                {data?.info.title}
+                {data?.info.location ? `, ${data?.info.location}` : ""}
               </div>
-            ))}
-          </div>
-          <div className="gap-x-[20px] py-[5px] flex grid-rows-1 justify-start">
-            {data &&
-              data.socials &&
-              Object.entries(data.socials).map(([key, value]) => (
-                <span key={key + value}>
-                  <Link key={key} href={value} className="">
-                    <Image
-                      className="filter grayscale-[0.80] cursor-pointer hover:filter-0 hover:grayscale-0 duration-300"
-                      src={getFavicon(value)}
-                      alt={key}
-                      width={25}
-                      height={25}
-                    />
-                  </Link>
-                </span>
+            </div>
+            <div className="my-[10px]">
+              {data?.info?.description?.map((text) => (
+                <div className="my-[10px] text-[16px]" key={text}>
+                  {text}
+                </div>
               ))}
+            </div>
+            <div className="gap-x-[20px] py-[5px] flex grid-rows-1 justify-start">
+              {data &&
+                data.socials &&
+                Object.entries(data.socials).map(([key, value]) => (
+                  <span key={key + value}>
+                    <Link key={key} href={value} className="">
+                      <Image
+                        className="filter grayscale-[0.80] cursor-pointer hover:filter-0 hover:grayscale-0 duration-300"
+                        src={getFavicon(value)}
+                        alt={key}
+                        width={25}
+                        height={25}
+                      />
+                    </Link>
+                  </span>
+                ))}
+            </div>
           </div>
         </div>
         <div className="flex justify-center items-center order-1 md:order-1">

@@ -25,9 +25,15 @@ const NavBar = () => {
     <div className="relative top-0 left-0 w-[100%] max-w-[100%] p-0 py-[10px] bg-white grid grid-cols-2 justify-space-between border-b-[1px] border-gray-300">
       <div className="flex grid-rows-1 justify-space-between gap-x-[20px] py-[5px] px-[20px]">
         <Link href="/">Home</Link>
-        <Link href="/#projects">Projects</Link>
-        <Link href="/#work">Experience</Link>
-        <Link href="/blogs">Blogs</Link>
+        <Link href="/#projects" scroll={true}>
+          Projects
+        </Link>
+        <Link href="/#work" scroll={true}>
+          Experience
+        </Link>
+        <Link href="/blogs" scroll={true}>
+          Blogs
+        </Link>
       </div>
     </div>
   );
