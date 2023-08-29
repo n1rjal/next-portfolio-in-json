@@ -117,9 +117,9 @@ const SingleBlog = async (props: SingleBlogProps) => {
 
   return (
     <div className="w-[100%] bg-white">
-      <div className="m-auto lg:max-w-[60vw] xl:max-w-[50vw] md:max-w-[80vw] py-10">
+      <div className="m-auto lg:max-w-[60vw] xl:max-w-[50vw] md:max-w-[80vw] p-5 xl:px-0 md:px-0 lg:px-0">
         <div className="my-10">
-          <h1 className="xl:text-5xl lg:text-5xl md:text-3xl sm:text-3xl text-2xl w-[100%]">
+          <h1 className="xl:text-5xl lg:text-5xl md:text-3xl sm:text-3xl text-3xl w-[100%]">
             {blog.title}
           </h1>
           <div className="mt-2">{new Date(blog.pubDate!).toDateString()}</div>
