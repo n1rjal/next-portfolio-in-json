@@ -18,7 +18,7 @@ body {
 }
 
 .blog-tags {
-  @apply first:ml-0 mx-1 p-1 text-sm cursor-pointer border-[2px] border border-slate-300 hover:border-slate-400;
+  @apply first:ml-0 mx-1 p-1 text-sm cursor-pointer border border-slate-300 hover:border-slate-400;
 }
 
 pre {
@@ -42,7 +42,7 @@ pre code {
 }
 
 .blog-content figcaption {
-  @apply text-sm text-center;
+  @apply text-sm text-center
   margin: 10px 0;
 }
 
@@ -120,7 +120,7 @@ h1 {
 }
 
 .sectioned {
-  @apply mx-auto sm:px-[1cm] xl:max-w-[65vw] lg:max-w-[70vw] md:max-w-[90vw] sm:max-w-[100vw] py-[2cm] sm:px-[10px] px-[20px] py-[20px];
+  @apply mx-auto xl:max-w-[65vw] lg:max-w-[70vw] md:max-w-[90vw] sm:max-w-[100vw] py-[2cm] sm:px-[10px] px-[20px];
   @apply lg:first:mt-[20px] xl:first:mt-[20px] lg:last:mb-[20px] xl:last:mb-[20px];
   @apply bg-white;
 }
@@ -131,5 +131,5 @@ h1 {
   @apply even:border-black even:text-black;
   @apply even:hover:bg-blue-500 even:hover:border-transparent even:hover:text-white;
   @apply transition ease-in-out duration-[1s];
-  @apply hover:border-2 hover:border-blue-600 hover:border-black hover:bg-transparent transition hover:text-black;
+  @apply hover:border-2 hover:bg-transparent transition hover:text-black;
 }

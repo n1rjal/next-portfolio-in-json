@@ -143,18 +143,36 @@ const SingleBlog = async (props: SingleBlogProps) => {
                 </span>
               ))}
           </div>
-          <div className="my-[2cm] border border-gray-950 p-[20px]">
-            <Link href={blog.link!} target="_blank">
-              <p className="text-sm">Support this article on medium,</p>
-              <h2 className="text-4xl font-bold">{blog.title}</h2>
-              <p className="text-sm">
-                {new Date(blog.pubDate!).toLocaleString("en-US", {
-                  month: "long",
-                  year: "numeric",
-                }) + ", "}
-                {blog.creator}
-              </p>
-            </Link>
+
+          <div className="my-[1cm] border border-gray-950 p-[20px]">
+            <div className="">
+              <Link href={blog.link!} target="_blank">
+                <p className="text-sm">Support this article</p>
+                <h2 className="text-4xl font-bold">{blog.title}</h2>
+                <p className="text-sm">
+                  {new Date(blog.pubDate!).toLocaleString("en-US", {
+                    month: "long",
+                    year: "numeric",
+                  }) + ", "}
+                  {blog.creator}
+                </p>
+              </Link>
+            </div>
+          </div>
+          <div className="my-[50px] border border-gray-950 p-[20px]">
+            <div className="">
+              <Link href={feed.link!} target="_blank">
+                <p className="text-sm">Support this author</p>
+                <h2 className="text-4xl font-bold">{feed.title}</h2>
+                <p className="text-sm">
+                  {new Date(blog.pubDate!).toLocaleString("en-US", {
+                    month: "long",
+                    year: "numeric",
+                  }) + ", "}
+                  {blog.creator}
+                </p>
+              </Link>
+            </div>
           </div>
           <div className="my-3">
             <h3 className="mt-[2cm] mb-[1cm] text-2xl font-bold">
@@ -190,13 +208,13 @@ const SingleBlog = async (props: SingleBlogProps) => {
                 </div>
               ))}
           </div>
+
           {otherBlogs && (
             <div className="my-3">
               <h3 className="mt-[2cm] mb-[1cm] text-2xl font-bold">
                 Some Random Blogs
               </h3>
               {getRandomItemsFromArray(otherBlogs, 3)
-                .slice(0, 3)
                 .filter(
                   (item) =>
                     customSlugify(item.title!.toLowerCase()) !==
