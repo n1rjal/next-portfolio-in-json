@@ -42,7 +42,7 @@ pre code {
 }
 
 .blog-content figcaption {
-  @apply text-sm text-center
+  @apply text-sm text-center;
   margin: 10px 0;
 }
 
