@@ -1,6 +1,9 @@
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
-  // ...
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -17,4 +20,6 @@ module.exports = {
   baseUrl: "/",
   title: "Docs for next portfolio",
   url: "http://localhost",
+  onBrokenLinks: "warn",
+  tagline: "Get your professional looking website for free",
 };
