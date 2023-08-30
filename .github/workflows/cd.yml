@@ -5,14 +5,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  make-html-files:
+  make-html-files-and-deploy:
     name: Make HTML files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Deploy
-        uses: natescherer/markdown-to-html-with-github-style-action@v1
+        uses: natescherer/markdown-to-html-with-github-style-action@v1.1.0
         with:
           path: README.md
           outputpath: out
