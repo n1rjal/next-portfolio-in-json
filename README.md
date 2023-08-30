@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next Portfolio
 
-## Getting Started
+Named next portfolio, this is a simple portfolio next web app, which gets its data from json file which can be found under [public entries](./tree/public/entries/).
+Built on top of [NextJs](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/).
 
-First, run the development server:
+## Get your portfolio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+To get your portfolio, you will have to do the following,
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Star this repository.
+2. Fork this repository.
+3. Create your entry for `{{host}}.json` in the `public/entries` directory based on the localhost.json entry
+4. Submit a PR and DNS entries will be provided to you.
+5. After you enter the DNS entries in your domain's DNS, your website will be setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contribution
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The UI could match the level of UI you expect from a portfolio site. A contribution is always welcomed.
+The steps are following.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. For the repository.
+2. Commit the changes required.
+3. Submit a PR.
