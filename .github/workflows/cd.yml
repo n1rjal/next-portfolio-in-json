@@ -32,7 +32,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           # for cname
-          cname: help.next-portfolio.nirjalpaudel.com.np
+          cname: next-portfolio-docs.nirjalpaudel.com.np
           # Set custom git config user.name and git config user.email. A commit is always created with the same user.
           commit_message: ${{ github.event.head_commit.message }}
           user_name: github-actions[bot]
