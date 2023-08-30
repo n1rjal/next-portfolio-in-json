@@ -3,6 +3,9 @@ name: Deploy to pages
 on:
   release:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   make-html-files-and-deploy:
@@ -28,3 +31,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          # Set custom git config user.name and git config user.email. A commit is always created with the same user.
+          publish_dir: ./public
+          commit_message: ${{ github.event.head_commit.message }}
