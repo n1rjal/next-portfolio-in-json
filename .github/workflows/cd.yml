@@ -6,6 +6,8 @@ on:
 
 jobs:
   make-html-files-and-deploy:
+    env:
+      HUSKY_SKIP_INSTALL: 1
     name: Make HTML files
     runs-on: ubuntu-latest
     steps:
