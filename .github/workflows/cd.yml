@@ -17,8 +17,8 @@ jobs:
 
       - name: Build Docusaurus website
         run: |
-          npm ci
-          npm run doc:build
+          pnpm install --prod
+          pnpm run doc:build
 
       - name: Deploy to GitHub Pages
         if: success()
