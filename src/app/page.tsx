@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div> 
       <Head>
-        <meta name="google-adsense-account" content="ca-pub-2089553262384227">
+        <meta name="google-adsense-account" content="ca-pub-2089553262384227"></meta>
       </Head>
       <Hero />
       <Work />
